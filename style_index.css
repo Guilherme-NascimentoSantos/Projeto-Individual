@@ -1,0 +1,514 @@
+/* Global */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #EEEEEE;
+}
+
+.header {
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 60px;
+    background-color: #EEEEEE
+}
+
+.title-header img {
+    float: left;
+}
+
+.title-header span {
+    color: rgb(4, 59, 136);
+}
+
+.title-header h1 {
+    float: left;
+}
+
+.nav {
+    float: right;
+}
+
+.nav .current {
+    color: rgb(82, 219, 210);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.nav li {
+    display: inline-block;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    color: rgb(252, 252, 252);
+    font-weight: bold;
+ 
+}
+
+.line {
+    background: rgb(40,45,240);
+    background: radial-gradient(circle, rgba(40,45,240,1) 0%, rgba(21,123,247,1) 49%, rgba(0,212,255,1) 100%);
+    height: 5px;
+}
+
+/* Menu */
+
+.menu {
+    height: 100px;
+    width: 800px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 176px;
+    margin-top: 100px;
+}
+
+.menu .items {
+    float: left;
+    padding: 30px;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li:hover {
+    border-bottom: rgb(35, 197, 241) solid;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+}
+
+.menu a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.menu .items:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.line_black {
+    background: rgb(0, 0, 0);
+    height: 2px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.menu .line_y {
+    background-color: black;
+    width: 2px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* Showcase */
+
+.showcase {
+    margin-left: 80px;
+    width: 915px;
+    height: 2135px;
+    margin-top: 70px;
+    background-color: rgb(0, 0, 0);
+    color: #f1f0f0;
+    border-radius: 20px;
+}
+
+.showcase .video_xbox {
+    float: left;
+    border-radius: 10px;
+}
+
+.showcase .xbox {
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 500px;
+    padding-bottom: 20px;
+}
+
+.showcase .especificacoes_xbox {
+    background-image: url(Xbox/xbox_series.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    width: 915px;
+    height: 400px;
+}
+
+.especificacoes_xbox h1 {
+    text-align: center;
+}
+
+.showcase .especificacoes_xbox ul{
+    padding-top: 50px;
+    padding-left: 90px;
+}
+
+.showcase .especificacoes_xbox li{
+    padding-top: 5px;
+}
+
+.showcase .jogos h1 {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.showcase .box {
+    text-align: center;
+    margin-left: 30px;
+}
+
+
+.showcase .box .items-box {
+    background-color: #4E4E4E;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 25px;
+}
+
+
+.title-forza, .buy-forza {
+    display: none;
+}
+
+.items-box:hover .title-forza {
+    display: inline-block;
+}
+
+.items-box:hover .buy-forza {
+    display: inline-block;
+}
+
+.showcase .box .items-box .forza {
+    width: 250px;
+    height: 250px;
+    margin-top: 1px;
+}
+
+.showcase .box .items-box .forza img{
+    border-radius: 20px;
+    height: 150px;
+}
+
+.showcase .box .items-box .forza button{
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+}
+
+.showcase .box .items-box .forza button:hover {
+    
+    background: rgb(179,202,242);
+    background: linear-gradient(90deg, rgba(179,202,242,1) 0%, rgba(119,155,218,1) 45%, rgba(92,133,202,1) 73%, rgba(87,140,230,1) 100%);
+    cursor: pointer;
+}
+
+
+
+.showcase .box2 {
+    text-align: center;
+    margin-left: 30px;
+    padding-bottom: 600px;
+}
+
+.showcase .box2 .items-box {
+    background-color: #4E4E4E;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 150px;
+}
+
+.showcase .box2 .items-box .forza {
+    width: 250px;
+    height: 250px;
+    margin-top: 1px;
+}
+
+.showcase .box2 .items-box .forza img{
+    border-radius: 20px;
+    height: 150px;
+}
+
+.showcase .box2 .items-box .forza button{
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+}
+
+.showcase .box2 .items-box .forza button:hover {
+    
+    background: rgb(179,202,242);
+background: linear-gradient(90deg, rgba(179,202,242,1) 0%, rgba(119,155,218,1) 45%, rgba(92,133,202,1) 73%, rgba(87,140,230,1) 100%);
+}
+
+
+
+.showcase .evolucao h1 {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.showcase .evolucao .consoles_xbox {
+    padding-left: 40px;
+    width: 875px;
+    border-radius: 20px;
+    background-color: rgb(59, 236, 65);
+}
+
+.showcase .evolucao .consoles_xbox img {
+    margin-left: 25px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox .pri_xbox {
+    padding-left: 25px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox .seg_xbox {
+    padding-left: 15px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox .ter_xbox {
+    padding-left: 10px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox .four_xbox {
+    padding-right: 20px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox {
+    float: left;
+    width: 180px;
+    height: 350px;
+    background-color: #4E4E4E;
+    margin-left: 35px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_xbox li {
+    font-size: 11pt;
+    padding-bottom: 20px;
+
+}
+
+
+
+.showcase #ps5_conteudo {
+    display: none;
+    color: black;
+}
+
+.showcase #ps5_conteudo video {
+    border-radius: 10px;
+    float: left;
+}
+
+.showcase .ps5 {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 500px;
+    padding-bottom: 20px;
+}
+
+.showcase .especificacoes_ps5 {
+    background-image: url(Ps5/ps5_logo.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    width: 915px;
+    height: 400px;
+}
+
+.especificacoes_ps5 h1 {
+    text-align: center;
+}
+
+.showcase .especificacoes_ps5 li{
+    padding-top: 10px;
+}
+
+.showcase .especificacoes_ps5 ul{
+    padding-top: 50px;
+    padding-left: 90px;
+}
+
+.showcase .evolucao .consoles_ps5 {
+    padding-left: 40px;
+    width: 875px;
+    border-radius: 20px;
+    background-color: #364cdf;
+}
+
+.showcase .evolucao .consoles_ps5 img {
+    margin-left: 25px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 .pri_xbox {
+    padding-left: 33px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 .seg_xbox {
+    padding-left: 33px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 .ter_xbox {
+    padding-left: 33px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 .four_xbox {
+    padding-left: 33px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 {
+    float: left;
+    width: 180px;
+    height: 350px;
+    background-color: #EEEEEE;
+    margin-left: 35px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-console_ps5 li {
+    font-size: 11pt;
+    padding-bottom: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.showcase #rtx_conteudo {
+    display: none;
+    color: white;
+}
+
+
+.showcase #rtx_conteudo .pri_video {
+    border-radius: 10px;
+    float: left;
+}
+
+.showcase .rtx {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 500px;
+    padding-bottom: 20px;
+}
+
+.showcase .especificacoes_rtx {
+    background-image: url(Rtx/RTX_logo.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 40%;
+    width: 915px;
+    height: 400px;
+}
+
+.especificacoes_rtx h1 {
+    text-align: center;
+}
+
+.showcase .especificacoes_rtx li{
+    padding-top: 10px;
+}
+
+.showcase .especificacoes_rtx ul{
+    padding-top: 50px;
+    padding-left: 90px;
+}
+
+.showcase .ray_tracing {
+    text-align: center;
+}
+
+.showcase .ray_tracing h1 {
+    padding-bottom: 30px;
+}
+
+.showcase .ray_tracing h3 {
+    padding-bottom: 30px;
+}
+
+.showcase .ray_tracing .fundo_video_ray-tracing {
+    width: 800px;
+    height: 331px;
+    background-color: gray;
+    margin-left: 57px;
+    padding-bottom: 125px;
+    padding-right: 13px;
+    padding-top: 5px;
+}
+
+.showcase .ray_tracing .fundo_video_ray-tracing .video_comparacao{
+    padding-left: 8px;
+    
+}
+
+.showcase .ray_tracing img{
+    padding-left: 30px;
+    padding-bottom: 40px;
+    
+}
+
+.showcase .evolucao .tipos_rtx {
+    padding-left: 40px;
+    width: 875px;
+    border-radius: 20px;
+    background-color: #089308;
+}
+
+.showcase .evolucao .tipos_rtx img {
+    margin-left: 25px;
+}
+
+.showcase .evolucao .tipos_rtx .imagem_4 {
+    margin-bottom: 15px;
+}
+
+
+.showcase .evolucao .especificacoes_consoles .items-tipos_rtx .pri_xbox {
+    padding-left: 5px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-tipos_rtx .four_xbox {
+    padding-left: 9px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-tipos_rtx {
+    float: left;
+    width: 180px;
+    height: 350px;
+    background-color: #343338;
+    margin-left: 35px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.showcase .evolucao .especificacoes_consoles .items-tipos_rtx li {
+    font-size: 11pt;
+    padding-bottom: 20px;
+
+}

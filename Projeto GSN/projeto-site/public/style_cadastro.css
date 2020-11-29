@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #06beb6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #48b1bf, #06beb6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    padding-bottom: 90px;
+    padding-right: 30px;
+    background-color: #f5f5f5;
+}
+
+.header img {
+    float: left;
+    margin-right: 5px;
+}
+
+.header .titulo {
+    float: left;
+    padding-left: 15px;
+}
+
+.header .titulo span, .cadastro span {
+    color: #48b1bf;
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: #48b1bf solid;
+}
+
+.header .cadastro span:hover {
+    transition: all 350ms ease-in-out;
+    border-bottom: #000000 solid;
+    cursor: pointer;
+}
+
+
+.header .cadastro {
+    float: right;
+}
+
+.showcase {
+    width: 100%;
+}
+
+.showcase .imagem {
+    float: left;
+    width: 700px;
+    padding-left: 180px;
+    position: absolute;
+}
+
+.showcase .imagem img {
+    padding-left: 90px;
+    padding-top: 30px;
+    float: left;
+}
+
+.showcase .login {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    left: 435px;
+    top: 145px;
+    text-align: center;
+    
+}
+.showcase .login input {
+    margin-top: 10px;
+    border-radius: 7px;
+}
+
+.showcase .login button:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    letter-spacing: 3px;
+    transition: all 450ms ease-in-out;
+    border: #fff solid 1px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+
+.showcase .login button {
+    width: 130px;
+    border-radius: 5px;
+    background: none;
+    border: none;
+    
+}
+
+.showcase .jak_right {
+    position: absolute;
+    left: 835px;
+    top: 158px;
+}
+
+#part_um #idade {
+    width: 158px;
+}
+
+
+
+

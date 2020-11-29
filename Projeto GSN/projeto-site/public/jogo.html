@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_jogo.css">
+    <script type="text/javascript" src="funcoes.js"></script>
+    <title>Jogo - GSN</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="titulo">
+            <img src="img/logo.jfif" alt="" width="26%">
+            <h2>Seja bem vindo, vamos <span>JOGAR</span></h2>
+            
+        </div>
+        <h2 class="sair">Deseja voltar para a página inicial? <br><span onclick="logoff()">CLIQUE AQUI</span></h2>
+    </div>
+    <h2 class="sub_titulo">Temos diversos minigames, se divirtar</h2>
+
+    <div class="showcase">
+        <div class="jogo_um">
+            <h3 class="titulo_jogos">Ajude o Scott Pilgrim a correr</h3>
+            <img src="scott/frame-1.gif" alt="" width="20%" id="scott">
+            <br>
+            <button onclick="corre_scott()" id="corre">CORRER</button>
+        </div>
+        <br>
+        <div class="jogo_dois">
+            <h3 class="titulo_jogos">Tente clicar no botão</h3>
+            <button onmousemove="btn_random()", onclick="conseguiu()" id="botao">OPA</button>
+
+        </div>
+        <br>
+        <div class="jogo_tres">
+            <h3 class="titulo_jogos">Jogo da memória, você consegue ganhar?</h3>
+            <div class="prim_memoria">
+                <img src="img/card.png" alt="" width="300px" height="300px" onclick="img1(), resultado()" id="img1b">
+            </div>
+            <div class="prim_memoria">
+                <img src="img/card.png" alt="" width="300px" height="300px" onclick="img2(), resultado()" id="img2b">
+            </div>
+            <div class="prim_memoria">
+                <img src="img/card.png" alt="" width="300px" height="300px" onclick="img3(), resultado()" id="img3b">
+            </div>
+            <br>
+            <div>
+                <div class="prim_memoria">
+                    <img src="img/card.png" alt="" width="300px" height="300px" onclick="img4(), resultado()" id="img4b">
+                </div>
+                <div class="prim_memoria">
+                    <img src="img/card.png" alt="" width="300px" height="300px" onclick="img5(), resultado()" id="img5b">
+                </div>
+                <div class="prim_memoria">
+                    <img src="img/card.png" alt="" width="300px" height="300px"onclick="img6(), resultado()"  id="img6b">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br><br><br>
+    <div class="line"></div>
+    <div class="footer">
+        <h3>Site desenvolvido pelo Guilherme Santos</h3>
+    
+        <a href="https://www.linkedin.com/in/guilherme-santos-8721a0177"><img src="img/linkedin.png" alt="" width="2%"></a>
+        <a href="https://github.com/Guilherme-NascimentoSantos"><img src="img/github.png" alt="" width="2%"></a>
+        <a href="https://wa.me/+55011934271649/?text=Ol%C3%A1,%20tudo%20bem?%20Estava%20olhando%20o%20seu%20site%20hoje"><img src="img/whatsapp.png" alt="" width="2%"></a>
+    </div>
+
+    <script>
+        
+
+
+
+
+        let cont = 0;
+        let memoria1 = 0;
+        let memoria2 = 0;
+        let memoria3 = 0;
+        let memoria4 = 0;
+        let memoria5 = 0;
+        let memoria6 = 0;
+        let acertos = 0;
+        let escolhas = 0;
+
+
+        function img1() {
+
+            img1b.src = 'img/Ratchet2.png';
+            memoria1 = 1;
+            escolhas ++;
+        }
+        function img2() {
+
+            img2b.src = 'img/jak.png';
+            memoria2 = 1;
+            escolhas ++;
+        }
+        function img3() {
+
+            img3b.src = 'img/clank.png';
+            memoria3 = 1;
+            escolhas ++;
+            
+        }
+        function img4() {
+
+            img4b.src = 'img/jak.png';
+            memoria4 = 1;
+            escolhas ++;
+        }
+        function img5() {
+
+            img5b.src = 'img/clank.png';
+            memoria5 = 1;
+            escolhas ++;
+
+        }
+        function img6() {
+
+            img6b.src = 'img/Ratchet2.png';
+            memoria6 = 1;
+            escolhas ++;
+
+        }
+
+        function resultado() {
+             
+            if (escolhas == 2) {
+                
+                if(memoria1 == 1 && memoria6 == 1) {
+                    alert("parabéns, acertou")
+                    acertos ++;
+                    setTimeout(sumir,1000)
+
+                    function sumir() {
+                        img1b.style = 'visibility: hidden';
+                        img6b.style = 'visibility: hidden';
+                        escolhas = 0;
+                        memoria1 = 0;
+                        memoria6 = 0;
+                        
+
+                    }
+                } if (memoria2 == 1 && memoria4 == 1) {
+                    alert("parabéns, acertou")
+                    acertos ++;
+                    setTimeout(sumir2,1000)
+
+                    function sumir2() {
+                        img2b.style = 'visibility: hidden';
+                        img4b.style = 'visibility: hidden';
+                        escolhas = 0;
+                        memoria2 = 0;
+                        memoria4 = 0;
+
+                    }
+                } if (memoria3 == 1 && memoria5 == 1) {
+                    alert("parabéns, acertou")
+                    acertos ++;
+                    setTimeout(sumir3,1000)
+
+                    function sumir3() {
+                        img3b.style = 'visibility: hidden';
+                        img5b.style = 'visibility: hidden';
+                        escolhas = 0;
+                        memoria3 = 0;
+                        memoria5 = 0;
+
+                    }
+                } if (memoria1 == 1 && memoria6 == 0 || memoria1 == 0 && memoria6 == 1 || memoria2 == 1 && memoria4 == 0 || memoria2 == 0 && memoria4 == 1 || memoria3 == 1 && memoria5 == 0 || memoria3 == 0 && memoria5 == 1) {
+                    alert("Você errou, tente novamente")
+                    setTimeout(erro,1000)
+
+                    function erro() {
+                        img1b.style = 'visibility: visible';
+                        img1b.src = 'img/card.png';
+                        
+                        img2b.style = 'visibility: visible';
+                        img2b.src = 'img/card.png';
+                        
+                        img3b.style = 'visibility: visible';
+                        img3b.src = 'img/card.png';
+                        
+                        img4b.style = 'visibility: visible';
+                        img4b.src = 'img/card.png';
+                        
+                        img5b.style = 'visibility: visible';
+                        img5b.src = 'img/card.png';
+                        
+                        img6b.style = 'visibility: visible';
+                        img6b.src = 'img/card.png';
+                        
+                        escolhas = 0;
+                        memoria1 = 0;
+                        memoria2 = 0;
+                        memoria3 = 0;
+                        memoria4 = 0;
+                        memoria5 = 0;
+                        memoria6 = 0;
+                        acertos = 0;
+                        
+
+                    }
+
+                } if (acertos == 3) {
+                     alert("Parabéns você ganhou, iremos reiniciar o jogo ok?");
+
+                    setTimeout(recomecar,1000)
+
+                    function recomecar() {
+                        img1b.style = 'visibility: visible';
+                        img1b.src = 'img/card.png';
+                        
+                        img2b.style = 'visibility: visible';
+                        img2b.src = 'img/card.png';
+                        
+                        img3b.style = 'visibility: visible';
+                        img3b.src = 'img/card.png';
+                        
+                        img4b.style = 'visibility: visible';
+                        img4b.src = 'img/card.png';
+                        
+                        img5b.style = 'visibility: visible';
+                        img5b.src = 'img/card.png';
+                        
+                        img6b.style = 'visibility: visible';
+                        img6b.src = 'img/card.png';
+                        
+                        escolhas = 0;
+                        memoria1 = 0;
+                        memoria2 = 0;
+                        memoria3 = 0;
+                        memoria4 = 0;
+                        memoria5 = 0;
+                        memoria6 = 0;
+                        acertos = 0;
+
+                    }
+                }
+            }       
+        }
+
+
+        function btn_random() {
+            let btn_top = Math.trunc(Math.random() * 220);
+            let btn_left = Math.trunc(Math.random() * 920);
+            botao.style = `margin-top: ${btn_top}px; margin-left: ${btn_left}px`;
+        }
+
+        function conseguiu() {
+            alert("PARABÉNS VOCÊ CONSEGUIU")
+        }
+
+        function corre_scott(para_scott) {
+            
+            corre.style = 'display: none';
+                
+
+                if (cont == 0) {
+                scott.src = 'scott/frame-2.gif'
+                scott.style = 'padding-left: 30px';
+                setTimeout(volta,200)
+
+                }             
+        
+        function volta() {
+                scott.src = 'scott/frame-3.gif'
+                scott.style = 'padding-left: 70px';
+
+                setTimeout(volta2,200)
+
+            }
+
+            function volta2() {
+                scott.src = 'scott/frame-4.gif'
+                scott.style = 'padding-left: 110px';
+
+                setTimeout(volta3,200)
+
+            }
+            function volta3() {
+                scott.src = 'scott/frame-5.gif'
+                scott.style = 'padding-left: 150px';
+
+                setTimeout(volta4,200)
+
+            }
+            function volta4() {
+                scott.src = 'scott/frame-6.gif'
+                scott.style = 'padding-left: 190px';
+
+                setTimeout(volta5,200)
+
+            }
+            function volta5() {
+                scott.src = 'scott/frame-7.gif'
+                scott.style = 'padding-left: 230px';
+
+                setTimeout(volta6,200)
+            }
+            function volta6() {
+                scott.src = 'scott/frame-3.gif'
+                scott.style = 'padding-left: 270px';
+
+                setTimeout(volta7,200)
+            }
+            function volta7() {
+                scott.src = 'scott/frame-4.gif'
+                scott.style = 'padding-left: 310px';
+
+                setTimeout(volta8,200)
+            }
+            function volta8() {
+                scott.src = 'scott/frame-5.gif'
+                scott.style = 'padding-left: 350px';
+
+                setTimeout(volta9,200)
+            }
+            function volta9() {
+                scott.src = 'scott/frame-6.gif'
+                scott.style = 'padding-left: 390px';
+
+                setTimeout(volta10,200)
+            }
+            function volta10() {
+                scott.src = 'scott/frame-7.gif'
+                scott.style = 'padding-left: 430px';
+
+                setTimeout(volta11,200)
+            }
+            function volta11() {
+                scott.src = 'scott/frame-3.gif'
+                scott.style = 'padding-left: 470px';
+
+                setTimeout(volta12,200)
+            }
+            function volta12() {
+                scott.src = 'scott/frame-4.gif'
+                scott.style = 'padding-left: 510px';
+
+                setTimeout(volta13,200)
+            }
+            function volta13() {
+                scott.src = 'scott/frame-5.gif'
+                scott.style = 'padding-left: 550px';
+
+                setTimeout(volta14,200)
+            }
+            function volta14() {
+                scott.src = 'scott/frame-6.gif'
+                scott.style = 'padding-left: 590px';
+
+                setTimeout(volta15,200)
+            }
+            function volta15() {
+                scott.src = 'scott/frame-7.gif'
+                scott.style = 'padding-left: 610px';
+
+                setTimeout(volta16,200)
+            }
+            function volta16() {
+                scott.src = 'scott/frame-3.gif'
+                scott.style = 'padding-left: 650px';
+
+                setTimeout(volta17,200)
+            }
+            function volta17() {
+                scott.src = 'scott/frame-4.gif'
+                scott.style = 'padding-left: 690px';
+
+                setTimeout(volta18,200)
+            }
+            function volta18() {
+                scott.src = 'scott/frame-5.gif'
+                scott.style = 'padding-left: 710px';
+
+                setTimeout(volta19,200)
+            }
+            function volta19() {
+                scott.src = 'scott/frame-6.gif'
+                scott.style = 'padding-left: 750px';
+
+                setTimeout(volta20,200)
+            }
+            function volta20() {
+                scott.src = 'scott/frame-7.gif'
+                scott.style = 'padding-left: 790px';
+
+                setTimeout(volta21,200)
+            }
+            function volta21() {
+                scott.src = 'scott/frame-3.gif'
+                scott.style = 'padding-left: 810px';
+
+                setTimeout(volta22,200)
+            }
+            function volta22() {
+                scott.src = 'scott/frame-4.gif'
+                scott.style = 'padding-left: 850px';
+
+                setTimeout(volta23,200)
+            }
+            function volta23() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 810px';
+
+                setTimeout(volta24,200)
+            }
+            function volta24() {
+                scott.src = 'scott/frame-6b.png'
+                scott.style = 'padding-left: 790px';
+
+                setTimeout(volta25,200)
+            }
+            function volta25() {
+                scott.src = 'scott/frame-7b.png'
+                scott.style = 'padding-left: 750px';
+
+                setTimeout(volta26,200)
+            }
+            function volta26() {
+                scott.src = 'scott/frame-3b.png'
+                scott.style = 'padding-left: 710px';
+
+                setTimeout(volta27,200)
+            }
+            function volta27() {
+                scott.src = 'scott/frame-4b.png'
+                scott.style = 'padding-left: 690px';
+
+                setTimeout(volta28,200)
+            }
+            function volta28() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 650px';
+
+                setTimeout(volta29,200)
+            }
+            function volta29() {
+                scott.src = 'scott/frame-7b.png'
+                scott.style = 'padding-left: 610px';
+
+                setTimeout(volta30,200)
+            }
+            function volta30() {
+                scott.src = 'scott/frame-3b.png'
+                scott.style = 'padding-left: 590px';
+
+                setTimeout(volta31,200)
+            }
+            function volta31() {
+                scott.src = 'scott/frame-4b.png'
+                scott.style = 'padding-left: 550px';
+
+                setTimeout(volta32,200)
+            }
+            function volta32() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 510px';
+
+                setTimeout(volta33,200)
+            }
+            function volta33() {
+                scott.src = 'scott/frame-6b.png'
+                scott.style = 'padding-left: 490px';
+
+                setTimeout(volta34,200)
+            }
+            function volta34() {
+                scott.src = 'scott/frame-7b.png'
+                scott.style = 'padding-left: 450px';
+
+                setTimeout(volta35,200)
+            }
+            function volta35() {
+                scott.src = 'scott/frame-3b.png'
+                scott.style = 'padding-left: 410px';
+
+                setTimeout(volta36,200)
+            }
+            function volta36() {
+                scott.src = 'scott/frame-4b.png'
+                scott.style = 'padding-left: 390px';
+
+                setTimeout(volta37,200)
+            }
+            function volta37() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 350px';
+
+                setTimeout(volta38,200)
+            }
+            function volta38() {
+                scott.src = 'scott/frame-6b.png'
+                scott.style = 'padding-left: 310px';
+
+                setTimeout(volta39,200)
+            }
+            function volta39() {
+                scott.src = 'scott/frame-7b.png'
+                scott.style = 'padding-left: 290px';
+
+                setTimeout(volta40,200)
+            }
+            function volta40() {
+                scott.src = 'scott/frame-3b.png'
+                scott.style = 'padding-left: 250px';
+
+                setTimeout(volta41,200)
+            }
+            function volta41() {
+                scott.src = 'scott/frame-4b.png'
+                scott.style = 'padding-left: 210px';
+
+                setTimeout(volta42,200)
+            }
+            function volta42() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 190px';
+
+                setTimeout(volta43,200)
+            }
+            function volta43() {
+                scott.src = 'scott/frame-6b.png'
+                scott.style = 'padding-left: 150px';
+
+                setTimeout(volta44,200)
+            }
+            function volta44() {
+                scott.src = 'scott/frame-7b.png'
+                scott.style = 'padding-left: 110px';
+
+                setTimeout(volta45,200)
+            }
+            function volta45() {
+                scott.src = 'scott/frame-3b.png'
+                scott.style = 'padding-left: 90px';
+
+                setTimeout(volta46,200)
+            }
+            function volta46() {
+                scott.src = 'scott/frame-4b.png'
+                scott.style = 'padding-left: 50px';
+
+                setTimeout(volta47,200)
+            }
+            function volta47() {
+                scott.src = 'scott/frame-5b.png'
+                scott.style = 'padding-left: 30px';
+
+                setTimeout(volta48,200)
+            }
+            function volta48() {
+                scott.src = 'scott/frame-6b.png'
+                scott.style = 'padding-left: 0px';
+                setTimeout(volta,200)
+            }
+            
+        }
+
+        
+
+        
+            
+
+
+    </script>
+    
+</body>
+</html>

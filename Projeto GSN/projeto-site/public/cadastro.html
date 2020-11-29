@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_cadastro.css">
+    <title>Cadastro - GSN</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="titulo">
+            <img src="img/logo.jfif" alt="" width="35%">
+            <h2>Faça login para <span>JOGAR</span></h2>
+        </div>
+        <div class="cadastro">
+            <h2>Já possui cadastro? <span onclick="login()">ENTRAR</span></h2>
+        </div>
+    </div>
+
+    <div class="showcase">
+
+
+        <div class="imagem">
+            <img src="img/fundo_cadastro.png" alt="" width="80%">
+        </div>
+        <br>
+        
+        <div class="login">
+            <div id="part_um">
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            Informe seu NickName:
+            <br>
+            <input type="text" name="nickName">
+            <br><br>
+            Informe sua idade:
+            <input type="date" name="dataNascimento" id="idade">
+            <br><br>
+        </div>
+        <div id="part_dois">
+            Informe sua senha:
+            <br>
+            <input type="password" id="senha" name="senha">
+            <br><br>
+            Confirme sua senha:
+            <br>
+            <input type="password" id="confirma_senha">
+            <br><br>
+            <button type="submit" id="btn_entrar">CADASTRAR</button>
+        </form>
+        </div>
+        </div>
+        <div id="div_erro" style="background-color: #bf8899; color: maroon; display: none;">
+            Erro no cadastro
+        </div>
+        
+    </div>
+
+    <script>
+
+        function login() {
+            window.location.href = 'login.html'
+        }  
+
+        function cadastrar() {
+            let data = "2012-01-01";
+            let dataUsu = idade.value;
+
+                if (dataUsu != "") {
+                    if (data < dataUsu) {
+                        alert("Você tem menos de 8 anos, não pode criar uma conta")
+                    } else {
+                    
+                        aguardar();
+                        var formulario = new URLSearchParams(new FormData(form_cadastro));
+                        fetch("/usuarios/cadastrar", {
+                            method: "POST",
+                            body: formulario
+                        }).then(function (response) {
+                            
+                            if (response.ok) {
+
+                                window.location.href='login.html';
+
+                            } else {
+
+                                console.log('Erro de cadastro!');
+                                response.text().then(function (resposta) {
+                                    div_erro.innerHTML = resposta;
+                                });
+                                finalizar_aguardar();
+                            }
+                        });
+
+                        return false;
+                    }
+                    
+                } else {
+                    alert("Insira uma data valida")
+                }
+        
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        // img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        // img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+
+    </script>
+    
+</body>
+</html>
